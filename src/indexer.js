@@ -15,7 +15,7 @@ const indexer = async () => {
     .sort()
     .reverse()
     .reduce(async (a, r) => {
-      const parsed = await parseMarkdown(`/app/md/${r}`)
+      const parsed = await parseMarkdown(`./md/${r}`)
       const published = parsed.data.published 
       
       if (published !== false) {
