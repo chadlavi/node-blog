@@ -1,6 +1,6 @@
 # Basic Markdown Site with frontmatter
 
-A simple markdown-powered site using Express.
+Uses node to turn markdown into html, CSS, and JS ready to serve as a static site.
 
 ## Using this project
 
