@@ -1,0 +1,31 @@
+{
+  "name": "blogmaker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "build": "node src/build.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "markdown-it": "^10.0.0",
+    "gray-matter": "^4.0.2",
+    "highlight.js": "^9.18.1",
+    "readdirp": "^3.4.0",
+    "mkdirp": "^1.0.3",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

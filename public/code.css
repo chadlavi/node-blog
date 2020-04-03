@@ -1,0 +1,140 @@
+/** 
+ * modified from
+ * https://github.com/highlightjs/highlight.js/blob/8616294/src/styles/atelier-cave-light.css
+ * and https://github.com/highlightjs/highlight.js/blob/8616294/src/styles/atelier-cave-dark.css
+ */
+
+:root {
+  --code-comment-color: #655f6d;
+  --code-red-color: #b93b70;
+  --code-orange-color: #a5543a;
+  --code-green-color: #1b7777;
+  --code-blue-color: #4e63d0;
+  --code-purple-color: #854ed2;
+  --code-deletion-addition-color: #19171c;
+  --code-deletion-background-color: var(--code-red-color);
+  --code-addition-background-color: var(--code-green-color);
+  --code-hjls-color: #585260;
+  --code-hjls-background-color: #efecf4;
+  --code-background: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --code-comment-color: #7e7887;
+    --code-red-color: #f374a9;
+    --code-orange-color: #d08c75;
+    --code-green-color: #5aa9a9;
+    --code-blue-color: #8499ff;
+    --code-purple-color: #b384f5;
+    --code-hjls-color: #8b8792;
+    --code-hjls-background-color: #19171c;
+    --code-background: #333;
+  }
+}
+
+pre code {
+  padding: 1em;
+  display: block;
+  background: var(--code-background);
+  overflow-x: auto;
+  border-radius: 8px;
+  scrollbar-width: none;
+}
+
+pre code::-webkit-scrollbar {
+  display: none;
+}
+
+:not(pre) > code {
+	background: var(--code-background);
+  border-radius: 3px;
+	padding: 4px 6px;
+  font-style: initial;
+}
+
+h1 > code {
+  border-radius: 6px;
+}
+
+/* Atelier-Cave Comment */
+.hljs-comment,
+.hljs-quote {
+  color: var(--code-comment-color);
+}
+
+/* Atelier-Cave Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-regexp,
+.hljs-link,
+.hljs-name,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: var(--code-red-color);
+}
+
+/* Atelier-Cave Orange */
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: var(--code-orange-color);
+}
+
+/* Atelier-Cave Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: var(--code-green-color);
+}
+
+/* Atelier-Cave Blue */
+.hljs-title,
+.hljs-section {
+  color: var(--code-blue-color);
+}
+
+/* Atelier-Cave Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: var(--code-purple-color);
+}
+
+.hljs-deletion,
+.hljs-addition {
+  color: var(--code-deletion-addition-color);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: var(--code-deletion-background-color);
+}
+
+.hljs-addition {
+  background-color: var(--code-addition-background-color);
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: var(--code-hjls-background-color);
+  color: var(--code-hjls-color);
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
