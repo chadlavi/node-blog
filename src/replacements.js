@@ -1,6 +1,7 @@
 const defaults = require('./defaults')
 const markdown = require('./renderMarkdown')
 const indexer = require('./indexer')
+const paths = require('./paths')
 
 const ifIndex = (filePath) => Boolean(filePath.match(/index\.md/g))
 
@@ -8,7 +9,7 @@ const returnIfNotIndex = (filePath, value) => !ifIndex(filePath) ? value : ''
 
 /* formatting helpers */
 
-const formatNav = (filePath) => returnIfNotIndex(filePath, `<nav><a href="/">Chad Lavimoniere</a></nav>`)
+const formatNav = (filePath) => returnIfNotIndex(filePath, `<nav><a href="${paths.root}/index.html">Chad Lavimoniere</a></nav>`)
 
 const formatIndex = async (filePath) => ifIndex(filePath) ? await indexer() : ''
 
@@ -18,7 +19,7 @@ const formatH1 = (title) => title ? markdown(`# ${title}`) : ''
 
 const formatDate = (date) => date ? `<h2 class="date">${date.toLocaleDateString()}</h2>` : '' 
 
-const formatFooter = (filePath) => returnIfNotIndex(filePath, `<footer><a href="/">home</a></footer>`)
+const formatFooter = (filePath) => returnIfNotIndex(filePath, `<footer><a href="${paths.root}/index.html">home</a></footer>`)
 
 /**
  * Define all the replacements you want to make in the markdown here.
@@ -33,6 +34,10 @@ const replacements = async ({
   filePath,
   html,
 }) => ([
+  [
+    /<!-- ROOT -->/g,
+    paths.root,
+  ],
   [
     '<!-- DESCRIPTION -->',
     data.description || defaults.meta.description,

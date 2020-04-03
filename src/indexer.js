@@ -21,8 +21,8 @@ const indexer = async () => {
       if (published !== false) {
         const title = parsed.data.title || '(Untitled)'
         const date = parsed.data.date ? parsed.data.date.toLocaleDateString() : undefined
-        const route = r.replace(/\.md/, '')
-        const link = await markdown(`[${title}](/${route})${date ? ` (${date}) ` : ''}`)
+        const route = r.replace(/\.md/, '.html')
+        const link = await markdown(`[${title}](./${route})${date ? ` (${date}) ` : ''}`)
         return await a + link
       } else {
         return a
